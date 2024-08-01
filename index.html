@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-container">
+        <input type="file" id="upload" accept="image/*">
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div class="crop-grid" id="cropGrid"></div>
+        </div>
+        <div class="controls">
+            <button onclick="cropImage()">Crop</button>
+            <button onclick="resizeImage()">Resize</button>
+            <select id="filter" onchange="applyFilter()">
+                <option value="none">None</option>
+                <option value="grayscale(100%)">Grayscale</option>
+                <option value="sepia(100%)">Sepia</option>
+                <option value="invert(100%)">Invert</option>
+                <option value="blur(5px)">Blur</option>
+            </select>
+            <button onclick="resetImage()">Reset</button>
+            <button onclick="downloadImage()">Download</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
