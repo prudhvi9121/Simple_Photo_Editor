@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FlickEditor - Best Image Web Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <!-- favicon link  -->
+    <!-- 
+    - favicon
+  -->
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+    <!-- Cropper CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  </head>
+  <body>
+    
+    <div class="container disable">
+        <h1 style="text-align: center;">Flick<span style="color: #28af60;">Editor</span></h1>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filters</label>
+                    <div class="options">
+                        <button id="brightness" class="active">Brightness</button>
+                        <button id="saturation">Saturation</button>
+                        <button id="inversion">Inversion</button>
+                        <button id="grayscale">Grayscale</button>
+                        <button id="contrast">Contrast</button>
+                        <button id="sepia">Sepia</button>
+                        <button id="huerotate">HueRotate</button>
+                        <button id="blur">Blur</button>
+                        <button id="opacity">opacity</button>
+                        
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name">Brighteness</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <input type="range" value="100" min="0" max="200">
+                    </div>
+                    
+                </div>
+                <div class="rotate">
+                    <label class="title">Other Tools</label>
+                    <div class="options" style="overflow: hidden;">
+                        <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                        <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
+                        <button id="crop" onclick="crop()"><i class="bx bxs-crop"></i></button>
+                        <button class="zoomin" style="font-size: 18px;"><i class="bx bx-zoom-in"></i></button>
+                        <button id="zoomout"><i class="bx bx-zoom-out"></i></button>
+                    </div>
+                </div>
+                <div class="preset-filters filter" style="margin-top: 10px;">
+                    <label class="title">Preset Filters</label>
+                    <div class="options">
+                        <button onclick="brightenfilter()" id="brightfilter" class="active">Brighten</button>
+                        <button onclick="bwfilter()" id="bandwfilter">Black & White</button>
+                        <button onclick="funkyfilter()" id="funkyfilter">Funky</button>
+                        <button onclick="vintagefilter()" id="vintagefilter">Vintage</button>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-img">
+                <img src="image-placeholder.svg" alt="preview-img" class="imgsrc">
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="reset-filter">Reset Filters</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <button class="cropbtn hide" style="background: #28af60;border: 1px solid #28af60;">Crop</button>
+                <button class="choose-img">Choose Image</button>
+                <button class="save-img">Save Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    
+  </body>
+</html>
